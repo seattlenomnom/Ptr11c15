@@ -8,7 +8,7 @@
 
 /* includes */
 
-
+#include <stdio.h>
 
 
 /* defines */
@@ -24,13 +24,9 @@ int stringLength(const char *string);
 
 
 int main(int argc, char *argv[]){
-
-
-
-
-
-
-
+    printf("%i ", stringLength("string length test"));
+    printf("%i ", stringLength(""));
+    printf("%i \n", stringLength("complete"));
 
     return(0);
 }
@@ -39,12 +35,12 @@ int main(int argc, char *argv[]){
 /* function definitions */
 
 int stringLength(const char *string){
+    const char *cptr = string;
 
+    while(*cptr)
+        ++cptr;
 
-
-
-
-    return(0);              /* cptr - string */
+    return(cptr - string);              /* cptr - string */
 }
 
 
